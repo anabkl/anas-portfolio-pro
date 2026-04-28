@@ -5,53 +5,50 @@ import { GithubIcon } from './BrandIcons'
 
 const projects = [
   {
-    title: 'AI Chat Assistant',
-    desc: 'LLM-powered conversational AI with RAG (Retrieval-Augmented Generation) pipeline. Features context-aware responses and document Q&A.',
-    tags: ['Python', 'LangChain', 'FastAPI', 'React'],
-    category: 'AI/ML',
-    github: '#',
+    title: 'STEP Smart Prediction Platform',
+    desc: 'Industrial AI/data platform developed during my OCP STEP internship to predict output water values from input process data.',
+    tags: ['Python', 'Data Analysis', 'Prediction', 'Industrial AI'],
+    category: 'AI/Data',
+    github: 'https://github.com/anabkl',
   },
   {
-    title: 'Neural Style Transfer',
-    desc: 'Deep learning application that applies artistic styles to images using convolutional neural networks.',
-    tags: ['Python', 'TensorFlow', 'React', 'Flask'],
-    category: 'AI/ML',
-    github: '#',
+    title: 'Lahraoui NeuralForex Pro',
+    desc: 'Deep learning forex prediction system for EUR/USD combining LSTM time-series forecasting with NLP sentiment analysis and Docker-based services.',
+    tags: ['Python', 'TensorFlow', 'NLP', 'Docker'],
+    category: 'AI/Data',
+    github: 'https://github.com/anabkl/Lahraoui-NeuralForex-Pro',
   },
   {
-    title: 'E-Commerce Platform',
-    desc: 'Full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    title: 'AI Resume Analyzer',
+    desc: 'AI-powered resume analyzer built with Streamlit and LLM tools to evaluate CVs and improve candidate profiles.',
+    tags: ['Python', 'Streamlit', 'AI', 'LLM'],
+    category: 'AI/Data',
+    github: 'https://github.com/anabkl/ai-resume-analyzer',
+  },
+  {
+    title: 'Parapharmacie.me',
+    desc: 'E-commerce/parapharmacy web project focused on product presentation, user experience, and practical frontend development.',
+    tags: ['JavaScript', 'Frontend', 'E-commerce', 'UI/UX'],
     category: 'Web Dev',
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/anabkl/parapharmacie.me',
   },
   {
-    title: 'Portfolio Analytics Dashboard',
-    desc: 'Real-time data visualization dashboard with interactive charts and ML-powered insights.',
-    tags: ['React', 'D3.js', 'Python', 'FastAPI'],
-    category: 'Data Science',
-    github: '#',
-    demo: '#',
+    title: 'PHP Exercises',
+    desc: 'Academic backend/web programming practice using PHP and database fundamentals.',
+    tags: ['PHP', 'Backend', 'Web'],
+    category: 'Academic',
+    github: 'https://github.com/anabkl/php-exercises',
   },
   {
-    title: 'NLP Sentiment Analyzer',
-    desc: 'Twitter sentiment analysis using transformer models with real-time streaming and visualization.',
-    tags: ['Python', 'Transformers', 'FastAPI', 'Docker'],
-    category: 'AI/ML',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'Real-time Chat App',
-    desc: 'WebSocket-based chat application with AI content moderation and end-to-end encryption.',
-    tags: ['React', 'Node.js', 'Socket.io', 'Redis'],
-    category: 'Web Dev',
-    github: '#',
+    title: 'LahraCore OS',
+    desc: 'Low-level systems project exploring bare-metal AArch64 microkernel foundations.',
+    tags: ['C', 'Assembly', 'OS', 'Systems'],
+    category: 'Systems',
+    github: 'https://github.com/anabkl/LahraCore-OS',
   },
 ]
 
-const filters = ['All', 'AI/ML', 'Web Dev', 'Data Science']
+const filters = ['All', 'AI/Data', 'Web Dev', 'Systems', 'Academic']
 
 const containerVariants = {
   hidden: {},
@@ -148,6 +145,8 @@ export default function Projects() {
                 <div className="flex gap-3 pt-2 border-t border-white/10">
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#00f5ff] transition-colors"
                   >
                     <GithubIcon size={16} />
@@ -156,6 +155,8 @@ export default function Projects() {
                   {project.demo && (
                     <a
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#bf00ff] transition-colors"
                     >
                       <ExternalLink size={16} />

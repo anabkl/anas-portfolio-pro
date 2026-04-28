@@ -1,11 +1,10 @@
-import { GithubIcon, LinkedinIcon, TwitterIcon } from './BrandIcons'
+import { GithubIcon, LinkedinIcon } from './BrandIcons'
 
 const navLinks = ['Home', 'About', 'Projects', 'Experience', 'Skills', 'Contact']
 
 const socials = [
-  { Icon: GithubIcon, href: 'https://github.com', label: 'GitHub' },
-  { Icon: LinkedinIcon, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { Icon: TwitterIcon, href: 'https://twitter.com', label: 'Twitter' },
+  { Icon: GithubIcon, href: 'https://github.com/anabkl', label: 'GitHub' },
+  { Icon: LinkedinIcon, href: 'https://www.linkedin.com/in/anas-lahraoui-a772a5300/', label: 'LinkedIn' },
 ]
 
 export default function Footer() {
@@ -19,9 +18,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-10">
           {/* Logo + Bio */}
           <div>
-            <div className="text-2xl font-bold font-mono gradient-text mb-3">Ana B.</div>
+            <div className="text-2xl font-bold font-mono gradient-text mb-3">A. Lahraoui</div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              AI Engineer &amp; Fullstack Developer passionate about building intelligent, impactful software.
+              AI student and developer passionate about intelligent systems, modern web development,
+              and real-world digital products.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Anas. All rights reserved.
+            &copy; {new Date().getFullYear()} Anas Lahraoui. All rights reserved.
           </p>
           <p className="text-xs text-gray-500">
             Built with <span className="text-[#00f5ff]">React</span> &amp;{' '}

@@ -1,42 +1,36 @@
 import { motion } from 'framer-motion'
-import { Brain, Code, Monitor, Server, Database, Cloud } from 'lucide-react'
+import { Brain, Code, Monitor, Server, Database } from 'lucide-react'
 
 const skillCategories = [
   {
-    title: 'AI & Machine Learning',
+    title: 'AI & Data',
     Icon: Brain,
     color: '#00f5ff',
-    skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Keras', 'OpenCV', 'HuggingFace', 'NumPy', 'Pandas'],
+    skills: ['Machine Learning', 'Deep Learning', 'NLP', 'Data Analysis', 'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow'],
   },
   {
-    title: 'Programming Languages',
+    title: 'Programming',
     Icon: Code,
     color: '#bf00ff',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'Bash', 'SQL', 'R'],
+    skills: ['Python', 'JavaScript', 'C', 'C++', 'Java', 'PHP', 'SQL', 'Bash'],
   },
   {
-    title: 'Frontend',
+    title: 'Web Development',
     Icon: Monitor,
     color: '#0080ff',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'HTML/CSS', 'Framer Motion', 'Redux', 'Vue.js'],
-  },
-  {
-    title: 'Backend',
-    Icon: Server,
-    color: '#00f5ff',
-    skills: ['Node.js', 'FastAPI', 'Django', 'Express.js', 'GraphQL', 'REST APIs'],
+    skills: ['React', 'Vite', 'Tailwind CSS', 'HTML5', 'CSS3', 'Node.js', 'Express.js', 'Streamlit'],
   },
   {
     title: 'Databases',
     Icon: Database,
     color: '#bf00ff',
-    skills: ['MongoDB', 'PostgreSQL', 'Redis', 'Firebase', 'MySQL', 'Elasticsearch'],
+    skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase', 'NoSQL'],
   },
   {
-    title: 'DevOps & Cloud',
-    Icon: Cloud,
-    color: '#0080ff',
-    skills: ['Docker', 'Kubernetes', 'AWS', 'GitHub Actions', 'Linux', 'Terraform'],
+    title: 'Systems & Tools',
+    Icon: Server,
+    color: '#00f5ff',
+    skills: ['Git', 'GitHub', 'Docker', 'Linux', 'UML', 'DevOps basics', 'Big Data ecosystem'],
   },
 ]
 

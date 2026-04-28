@@ -30,7 +30,7 @@ export default function LoadingScreen() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="text-center mb-8"
       >
-        <h1 className="text-6xl font-bold font-mono gradient-text mb-2">A.B.</h1>
+        <h1 className="text-6xl font-bold font-mono gradient-text mb-2">A.L.</h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

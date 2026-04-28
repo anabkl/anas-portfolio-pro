@@ -2,8 +2,18 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './BrandIcons'
+import profileImage from '../assets/anas-lahraoui.jpg'
 
-const roles = ['AI Engineer', 'Fullstack Developer', 'ML Researcher', 'Problem Solver']
+const roles = [
+  'SIIA Student',
+  'AI & Data Science Enthusiast',
+  'Full-Stack Developer',
+  'Machine Learning Learner',
+  'Industrial AI Project Builder',
+]
+
+const githubUrl = 'https://github.com/anabkl'
+const linkedinUrl = 'https://www.linkedin.com/in/anas-lahraoui-a772a5300/'
 
 export default function Hero() {
   const [displayed, setDisplayed] = useState('')
@@ -21,8 +31,10 @@ export default function Hero() {
     } else if (isDeleting && displayed.length > 0) {
       timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 50)
     } else if (isDeleting && displayed.length === 0) {
-      setIsDeleting(false)
-      setRoleIndex((i) => (i + 1) % roles.length)
+      timeout = setTimeout(() => {
+        setIsDeleting(false)
+        setRoleIndex((i) => (i + 1) % roles.length)
+      }, 150)
     }
     return () => clearTimeout(timeout)
   }, [displayed, isDeleting, roleIndex])
@@ -30,7 +42,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-28 pb-20"
     >
       {/* Animated orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -39,95 +51,133 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-[#0080ff]/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }} />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-[#00f5ff] font-mono text-sm tracking-widest uppercase mb-4">
-            Welcome to my portfolio
-          </p>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-extrabold mb-4"
-        >
-          Hi, I&apos;m{' '}
-          <span className="gradient-text">Anas</span>
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-2xl md:text-3xl font-mono text-gray-300 mb-4 h-10"
-        >
-          <span className="text-[#00f5ff]">{displayed}</span>
-          <span className="animate-pulse text-[#bf00ff]">|</span>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-gray-400 text-lg md:text-xl mb-10"
-        >
-          Building the future with AI &amp; Code
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 rounded-full font-semibold text-black"
-            style={{ background: 'linear-gradient(135deg, #00f5ff, #bf00ff)' }}
+      <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+        <div className="text-center lg:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            View Projects
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 rounded-full font-semibold border border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff]/10 transition-colors"
+            <p className="text-[#00f5ff] font-mono text-sm tracking-widest uppercase mb-4">
+              Khouribga, Morocco
+            </p>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-extrabold mb-4"
           >
-            Contact Me
-          </motion.button>
-        </motion.div>
+            Hi, I&apos;m{' '}
+            <span className="gradient-text">Anas Lahraoui</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl sm:text-2xl md:text-3xl font-mono text-gray-300 mb-5 min-h-12"
+          >
+            <span className="text-[#00f5ff]">{displayed}</span>
+            <span className="animate-pulse text-[#bf00ff]">|</span>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-3xl mx-auto lg:mx-0"
+          >
+            Computer Science student at Université Sultan Moulay Slimane, currently in the
+            Excellence Program in Information Systems and Artificial Intelligence (SIIA).
+            Passionate about AI, Big Data, web development, and building real-world intelligent systems.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-3 rounded-full font-semibold text-black"
+              style={{ background: 'linear-gradient(135deg, #00f5ff, #bf00ff)' }}
+            >
+              View Projects
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-3 rounded-full font-semibold border border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff]/10 transition-colors"
+            >
+              Contact Me
+            </motion.button>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 rounded-full font-semibold border border-white/15 text-gray-200 hover:border-[#bf00ff] hover:text-[#bf00ff] transition-colors"
+            >
+              GitHub
+            </motion.a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="flex items-center justify-center lg:justify-start gap-6"
+          >
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00f5ff] transition-colors"
+              aria-label="GitHub"
+            >
+              <GithubIcon size={24} />
+            </a>
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00f5ff] transition-colors"
+              aria-label="LinkedIn"
+            >
+              <LinkedinIcon size={24} />
+            </a>
+          </motion.div>
+        </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-6"
+          initial={{ opacity: 0, scale: 0.92, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25, ease: 'easeOut' }}
+          className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none"
         >
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#00f5ff] transition-colors"
-            aria-label="GitHub"
-          >
-            <GithubIcon size={24} />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#00f5ff] transition-colors"
-            aria-label="LinkedIn"
-          >
-            <LinkedinIcon size={24} />
-          </a>
+          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#00f5ff]/30 via-[#bf00ff]/20 to-[#0080ff]/30 blur-2xl" />
+          <div className="relative glass rounded-[2rem] p-3 shadow-2xl shadow-[#00f5ff]/10">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-white/10">
+              <img
+                src={profileImage}
+                alt="Anas Lahraoui"
+                className="h-full w-full object-cover"
+                style={{ objectPosition: 'center 62%' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-black/45 p-4 backdrop-blur-md">
+                <p className="text-sm font-mono text-[#00f5ff]">A. Lahraoui</p>
+                <p className="text-xs text-gray-300">SIIA Excellence Program</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
 
