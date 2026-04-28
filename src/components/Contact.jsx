@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Send } from 'lucide-react'
+import { CheckCircle, Mail, Send } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './BrandIcons'
 
+const personalEmail = 'lahraouianas16@gmail.com'
+
 const contactInfo = [
-  { Icon: Mail, label: 'Email', value: 'anas@example.com', href: 'mailto:anas@example.com' },
-  { Icon: GithubIcon, label: 'GitHub', value: 'github.com/anas-dev', href: 'https://github.com' },
-  { Icon: LinkedinIcon, label: 'LinkedIn', value: 'linkedin.com/in/anas', href: 'https://linkedin.com' },
+  { Icon: Mail, label: 'University Email', value: 'anas.lahraoui@usms.ac.ma', href: 'mailto:anas.lahraoui@usms.ac.ma' },
+  { Icon: Mail, label: 'Personal Email', value: personalEmail, href: `mailto:${personalEmail}` },
+  { Icon: GithubIcon, label: 'GitHub', value: 'github.com/anabkl', href: 'https://github.com/anabkl' },
+  { Icon: LinkedinIcon, label: 'LinkedIn', value: 'linkedin.com/in/anas-lahraoui-a772a5300', href: 'https://www.linkedin.com/in/anas-lahraoui-a772a5300/' },
 ]
 
 export default function Contact() {
@@ -17,6 +20,15 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const subject = form.subject || 'Portfolio contact'
+    const body = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      '',
+      form.message,
+    ].join('\n')
+
+    window.location.href = `mailto:${personalEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSubmitted(true)
   }
 
@@ -37,7 +49,7 @@ export default function Contact() {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="w-24 h-1 mx-auto rounded-full mb-4" style={{ background: 'linear-gradient(90deg, #00f5ff, #bf00ff)' }} />
-          <p className="text-gray-400 text-lg">Have a project in mind? Let&apos;s talk!</p>
+          <p className="text-gray-400 text-lg">Open to internships, collaboration, and practical AI or software projects.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -54,9 +66,9 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="glass rounded-2xl p-8 text-center"
               >
-                <div className="text-4xl mb-4">🎉</div>
-                <h3 className="text-xl font-bold gradient-text mb-2">Message Sent!</h3>
-                <p className="text-gray-400">Thanks for reaching out. I&apos;ll get back to you soon.</p>
+                <CheckCircle className="mx-auto mb-4 text-[#00f5ff]" size={42} />
+                <h3 className="text-xl font-bold gradient-text mb-2">Email Draft Opened</h3>
+                <p className="text-gray-400">Your email app should open with the message ready to send.</p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: '', email: '', subject: '', message: '' }) }}
                   className="mt-6 px-6 py-2 rounded-full text-sm border border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff]/10 transition-colors"
@@ -125,8 +137,8 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-semibold mb-2">Let&apos;s connect</h3>
               <p className="text-gray-400 leading-relaxed">
-                Whether you have a project idea, want to collaborate, or just want to say hi —
-                my inbox is always open. I&apos;ll do my best to get back to you!
+                Whether it is an internship opportunity, an academic collaboration, or a real-world
+                AI/software project, I&apos;m always happy to connect and learn from serious work.
               </p>
             </div>
 

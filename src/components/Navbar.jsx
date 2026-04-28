@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
@@ -7,14 +7,14 @@ const navLinks = ['Home', 'About', 'Projects', 'Experience', 'Skills', 'Contact'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [visible, setVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const [activeSection, setActiveSection] = useState('home')
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const current = window.scrollY
-      setVisible(current < lastScrollY || current < 50)
-      setLastScrollY(current)
+      setVisible(current < lastScrollY.current || current < 50)
+      lastScrollY.current = current
 
       for (const link of [...navLinks].reverse()) {
         const el = document.getElementById(link.toLowerCase())
@@ -24,9 +24,10 @@ export default function Navbar() {
         }
       }
     }
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -46,7 +47,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollTo('home')}
         >
-          Ana B.
+          A. Lahraoui
         </motion.div>
 
         {/* Desktop links */}
