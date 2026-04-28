@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, Mail, Send } from 'lucide-react'
-import { GithubIcon, LinkedinIcon } from './BrandIcons'
+import { GithubIcon, LinkedinIcon, TwitterIcon } from './BrandIcons'
 
 const personalEmail = 'lahraouianas16@gmail.com'
+const twitterUrl = 'https://x.com/LahraouiAnas'
 
 const contactInfo = [
   { Icon: Mail, label: 'University Email', value: 'anas.lahraoui@usms.ac.ma', href: 'mailto:anas.lahraoui@usms.ac.ma' },
   { Icon: Mail, label: 'Personal Email', value: personalEmail, href: `mailto:${personalEmail}` },
   { Icon: GithubIcon, label: 'GitHub', value: 'github.com/anabkl', href: 'https://github.com/anabkl' },
   { Icon: LinkedinIcon, label: 'LinkedIn', value: 'linkedin.com/in/anas-lahraoui-a772a5300', href: 'https://www.linkedin.com/in/anas-lahraoui-a772a5300/' },
+  { Icon: TwitterIcon, label: 'X/Twitter', value: 'x.com/LahraouiAnas', href: twitterUrl },
 ]
 
 export default function Contact() {
