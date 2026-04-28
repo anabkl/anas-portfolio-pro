@@ -8,22 +8,30 @@ const projects = [
     title: 'STEP Smart Prediction Platform',
     desc: 'Industrial AI/data platform developed during my OCP STEP internship to predict output water values from input process data.',
     tags: ['Python', 'Data Analysis', 'Prediction', 'Industrial AI'],
-    category: 'AI/Data',
+    category: 'Data Science',
     github: 'https://github.com/anabkl',
   },
   {
     title: 'Lahraoui NeuralForex Pro',
     desc: 'Deep learning forex prediction system for EUR/USD combining LSTM time-series forecasting with NLP sentiment analysis and Docker-based services.',
     tags: ['Python', 'TensorFlow', 'NLP', 'Docker'],
-    category: 'AI/Data',
+    category: 'AI/ML',
     github: 'https://github.com/anabkl/Lahraoui-NeuralForex-Pro',
   },
   {
     title: 'AI Resume Analyzer',
     desc: 'AI-powered resume analyzer built with Streamlit and LLM tools to evaluate CVs and improve candidate profiles.',
     tags: ['Python', 'Streamlit', 'AI', 'LLM'],
-    category: 'AI/Data',
+    category: 'AI/ML',
     github: 'https://github.com/anabkl/ai-resume-analyzer',
+  },
+  {
+    title: 'FPK-EXPRESS',
+    desc: 'AI-powered preorder and pickup platform for FPK Khouribga students with student/vendor dashboards, survey validation, AI-like recommendations, wait-time estimation, and analytics.',
+    tags: ['React', 'Vite', 'FastAPI', 'SQLite', 'Docker', 'Tailwind', 'AI MVP'],
+    category: 'Web Dev',
+    displayCategory: 'Web Dev / Full Stack',
+    github: 'https://github.com/anabkl/FPK-EXPRESS',
   },
   {
     title: 'Parapharmacie.me',
@@ -33,22 +41,15 @@ const projects = [
     github: 'https://github.com/anabkl/parapharmacie.me',
   },
   {
-    title: 'PHP Exercises',
-    desc: 'Academic backend/web programming practice using PHP and database fundamentals.',
-    tags: ['PHP', 'Backend', 'Web'],
-    category: 'Academic',
-    github: 'https://github.com/anabkl/php-exercises',
-  },
-  {
     title: 'LahraCore OS',
-    desc: 'Low-level systems project exploring bare-metal AArch64 microkernel foundations.',
-    tags: ['C', 'Assembly', 'OS', 'Systems'],
+    desc: 'Low-level systems project exploring bare-metal AArch64 microkernel foundations and QEMU-bootable OS development.',
+    tags: ['C', 'Assembly', 'OS', 'Systems', 'AArch64'],
     category: 'Systems',
     github: 'https://github.com/anabkl/LahraCore-OS',
   },
 ]
 
-const filters = ['All', 'AI/Data', 'Web Dev', 'Systems', 'Academic']
+const filters = ['All', 'AI/ML', 'Web Dev', 'Data Science', 'Systems']
 
 const containerVariants = {
   hidden: {},
@@ -125,7 +126,7 @@ export default function Projects() {
                       color: '#00f5ff',
                     }}
                   >
-                    {project.category}
+                    {project.displayCategory || project.category}
                   </span>
                   <h3 className="text-lg font-bold text-white mb-2">{project.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{project.desc}</p>

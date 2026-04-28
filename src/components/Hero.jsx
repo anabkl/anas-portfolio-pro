@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
-import { GithubIcon, LinkedinIcon } from './BrandIcons'
+import { GithubIcon, LinkedinIcon, TwitterIcon } from './BrandIcons'
 import profileImage from '../assets/anas-lahraoui.jpg'
 
 const roles = [
@@ -14,6 +14,7 @@ const roles = [
 
 const githubUrl = 'https://github.com/anabkl'
 const linkedinUrl = 'https://www.linkedin.com/in/anas-lahraoui-a772a5300/'
+const twitterUrl = 'https://x.com/LahraouiAnas'
 
 export default function Hero() {
   const [displayed, setDisplayed] = useState('')
@@ -153,22 +154,37 @@ export default function Hero() {
             >
               <LinkedinIcon size={24} />
             </a>
+            <a
+              href={twitterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00f5ff] transition-colors"
+              aria-label="X/Twitter"
+            >
+              <TwitterIcon size={24} />
+            </a>
           </motion.div>
         </div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.92, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: 'easeOut' }}
-          className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none"
+          animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+          transition={{
+            opacity: { duration: 0.7, delay: 0.25, ease: 'easeOut' },
+            scale: { duration: 0.7, delay: 0.25, ease: 'easeOut' },
+            y: { duration: 7, repeat: Infinity, ease: 'easeInOut' },
+          }}
+          whileHover={{ scale: 1.025, rotate: 0.35 }}
+          className="relative mx-auto w-full max-w-[18rem] sm:max-w-sm md:max-w-md lg:max-w-none"
         >
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#00f5ff]/30 via-[#bf00ff]/20 to-[#0080ff]/30 blur-2xl" />
+          <div className="absolute -inset-5 rounded-[2.4rem] bg-gradient-to-br from-[#00f5ff]/35 via-[#bf00ff]/20 to-[#0080ff]/35 blur-2xl" />
+          <div className="absolute -inset-px rounded-[2rem] bg-gradient-to-br from-[#00f5ff] via-[#bf00ff] to-[#0080ff] opacity-70" />
           <div className="relative glass rounded-[2rem] p-3 shadow-2xl shadow-[#00f5ff]/10">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-white/10">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-white/10 bg-black/30">
               <img
                 src={profileImage}
                 alt="Anas Lahraoui"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 style={{ objectPosition: 'center 62%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />

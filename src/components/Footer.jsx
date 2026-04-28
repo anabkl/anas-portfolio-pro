@@ -1,10 +1,11 @@
-import { GithubIcon, LinkedinIcon } from './BrandIcons'
+import { GithubIcon, LinkedinIcon, TwitterIcon } from './BrandIcons'
 
 const navLinks = ['Home', 'About', 'Projects', 'Experience', 'Skills', 'Contact']
 
 const socials = [
   { Icon: GithubIcon, href: 'https://github.com/anabkl', label: 'GitHub' },
   { Icon: LinkedinIcon, href: 'https://www.linkedin.com/in/anas-lahraoui-a772a5300/', label: 'LinkedIn' },
+  { Icon: TwitterIcon, href: 'https://x.com/LahraouiAnas', label: 'X/Twitter' },
 ]
 
 export default function Footer() {
